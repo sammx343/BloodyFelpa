@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-
   // Use this for initialization
   public float swingingSpeed = 3f;
   public float attackDuration = .5f;

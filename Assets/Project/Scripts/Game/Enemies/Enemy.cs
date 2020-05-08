@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
   {
     if (collision.GetComponent<Sword>() != null)
     {
+      Debug.Log("hits");
       if (collision.GetComponent<Sword>().IsAttacking)
       {
         Hit();

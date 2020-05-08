@@ -33,7 +33,6 @@ public class GameSceneController : MonoBehaviour
       {
         hearts[index].SetActive(false);
       }
-
     }
   }
 }
