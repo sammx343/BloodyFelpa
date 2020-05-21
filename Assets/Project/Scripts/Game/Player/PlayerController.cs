@@ -6,11 +6,15 @@ public class PlayerController : MonoBehaviour
 {
   [Header("Visuals")]
   public GameObject body;
+  public GameObject teddyBody;
+
   [Header("Movement")]
   public float movementSpeed = 3f;
   public float jumpingVelocity = 100f;
   public float knockBackForce = 100f;
   public float rotateSpeed = 90f;
+  public float playerSpeedX = 0;
+  public float playerSpeedZ = 0;
   public int health = 5;
   private float knockBackTimer;
   private bool canJump = false;
@@ -42,6 +46,8 @@ public class PlayerController : MonoBehaviour
       ProccessInput();
     }
     body.transform.rotation = Quaternion.Lerp(body.transform.localRotation, targetModelRotation, Time.deltaTime * rotateSpeed);
+
+    teddyBody.GetComponent<Animator>().SetFloat("speedXZ", Mathf.Max(Mathf.Abs(playerRigidbody.velocity.x), Mathf.Abs(playerRigidbody.velocity.z)));
   }
 
   void ProccessInput()
